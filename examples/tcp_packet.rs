@@ -1,9 +1,7 @@
 extern crate pnet;
-// extern crate pnet::tcp;
 
-use std::net::{Ipv4Addr};
+use std::net::Ipv4Addr;
 
-// use pnet::util::ipv4_checksum;
 use pnet_packet::Packet;
 use pnet_packet::ip::IpNextHeaderProtocols;
 use pnet_packet::ipv4::MutableIpv4Packet;
@@ -11,7 +9,6 @@ use pnet_packet::tcp::{MutableTcpPacket, TcpFlags, TcpOption, ipv4_checksum, Tcp
 
 use pnet::datalink::{Channel, MacAddr, NetworkInterface};
 
-// use pnet::packet::arp::ArpPacket;
 use pnet::packet::ethernet::EtherTypes;
 use pnet::packet::ethernet::MutableEthernetPacket;
 
@@ -39,21 +36,6 @@ fn send_tcp_packet(interface: NetworkInterface, target_ip: Ipv4Addr) {
     ethernet_packet.set_source(interface.mac.unwrap());
     ethernet_packet.set_ethertype(EtherTypes::Arp);
 
-    // let mut arp_buffer = [0u8; 28];
-    // let mut arp_packet = MutableArpPacket::new(&mut arp_buffer).unwrap();
-
-    // arp_packet.set_hardware_type(ArpHardwareTypes::Ethernet);
-    // arp_packet.set_protocol_type(EtherTypes::Ipv4);
-    // arp_packet.set_hw_addr_len(6);
-    // arp_packet.set_proto_addr_len(4);
-    // arp_packet.set_operation(ArpOperations::Request);
-    // arp_packet.set_sender_hw_addr(interface.mac.unwrap());
-    // arp_packet.set_sender_proto_addr(source_ip);
-    // arp_packet.set_target_hw_addr(MacAddr::zero());
-    // arp_packet.set_target_proto_addr(target_ip);
-
-    // ethernet_packet.set_payload(arp_packet.packet_mut());
-
     let tcp_packet = create_tcp_packet();
     ethernet_packet.set_payload(&tcp_packet);
 
@@ -70,15 +52,11 @@ fn send_tcp_packet(interface: NetworkInterface, target_ip: Ipv4Addr) {
 
         let tcp = TcpPacket::new(&buf[MutableEthernetPacket::minimum_packet_size()..]).unwrap();
 
-        // let arp = ArpPacket::new(&buf[MutableEthernetPacket::minimum_packet_size()..]).unwrap();
-
         println!("Received reply {}", tcp.packet().len());
     }
 }
 
 fn create_tcp_packet() -> [u8; 56] {
-    // use crate::ip::IpNextHeaderProtocols;
-    // use crate::ipv4::MutableIpv4Packet;
 
     const IPV4_HEADER_LEN: usize = 20;
     const TCP_HEADER_LEN: usize = 32;
@@ -87,6 +65,7 @@ fn create_tcp_packet() -> [u8; 56] {
     let mut packet = [0u8; IPV4_HEADER_LEN + TCP_HEADER_LEN + TEST_DATA_LEN];
 
     let ipv4_source = Ipv4Addr::new(192, 168, 2, 1);
+
     let ipv4_destination = Ipv4Addr::new(192, 168, 111, 51);
     {
         let mut ip_header = MutableIpv4Packet::new(&mut packet[..]).unwrap();
@@ -102,6 +81,7 @@ fn create_tcp_packet() -> [u8; 56] {
     packet[IPV4_HEADER_LEN + TCP_HEADER_LEN + 3] = 't' as u8;
 
     let mut tcp_header = MutableTcpPacket::new(&mut packet[IPV4_HEADER_LEN..]).unwrap();
+
     tcp_header.set_source(49511);
     tcp_header.set_destination(9000);
     tcp_header.set_sequence(0x9037d2b8);
@@ -159,6 +139,4 @@ fn main() {
     let _source_mac = interface.mac.unwrap();
 
     send_tcp_packet(interface, target_ip);
-
-    // println!("Target MAC address: {}", target_mac);
 }
