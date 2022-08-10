@@ -1,0 +1,288 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'pnet'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=pnet"
+                ],
+                "filter": {
+                    "name": "pnet",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'arp_packet'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=arp_packet",
+                    "--package=pnet"
+                ],
+                "filter": {
+                    "name": "arp_packet",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'arp_packet'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=arp_packet",
+                    "--package=pnet"
+                ],
+                "filter": {
+                    "name": "arp_packet",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'tcp_packet'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=tcp_packet",
+                    "--package=pnet",
+                    "--features=std"
+                ],
+                "filter": {
+                    "name": "tcp_packet",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'tcp_packet'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=tcp_packet",
+                    "--package=pnet"
+                ],
+                "filter": {
+                    "name": "tcp_packet",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'fanout'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=fanout",
+                    "--package=pnet"
+                ],
+                "filter": {
+                    "name": "fanout",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'fanout'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=fanout",
+                    "--package=pnet"
+                ],
+                "filter": {
+                    "name": "fanout",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'list_interfaces'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=list_interfaces",
+                    "--package=pnet"
+                ],
+                "filter": {
+                    "name": "list_interfaces",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'list_interfaces'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=list_interfaces",
+                    "--package=pnet"
+                ],
+                "filter": {
+                    "name": "list_interfaces",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'packetdump'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=packetdump",
+                    "--package=pnet"
+                ],
+                "filter": {
+                    "name": "packetdump",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'packetdump'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=packetdump",
+                    "--package=pnet"
+                ],
+                "filter": {
+                    "name": "packetdump",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'transport_echo_server'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=transport_echo_server",
+                    "--package=pnet"
+                ],
+                "filter": {
+                    "name": "transport_echo_server",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'transport_echo_server'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=transport_echo_server",
+                    "--package=pnet"
+                ],
+                "filter": {
+                    "name": "transport_echo_server",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug benchmark 'rs_sender'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bench=rs_sender",
+                    "--package=pnet"
+                ],
+                "filter": {
+                    "name": "rs_sender",
+                    "kind": "bench"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug benchmark 'rs_receiver'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bench=rs_receiver",
+                    "--package=pnet"
+                ],
+                "filter": {
+                    "name": "rs_receiver",
+                    "kind": "bench"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

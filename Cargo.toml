@@ -39,6 +39,10 @@ name = "arp_packet"
 required-features = ["std"]
 
 [[example]]
+name = "tcp_packet"
+required-features = ["std"]
+
+[[example]]
 name = "fanout"
 required-features = ["std"]
 

@@ -1,0 +1,65 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cargo",
+			"command": "run",
+			"args": [
+				"--package",
+				"pnet",
+				"--example",
+				"tcp_packet",
+				"--features",
+				"std"
+			],
+			"env": {
+				"RUST_BACKTRACE": "short",
+				"SHELL": "/bin/bash",
+				"HISTCONTROL": "ignoredups",
+				"SYSTEMD_COLORS": "false",
+				"HISTSIZE": "1000",
+				"HOSTNAME": "ip-172-31-59-21.us-west-2.compute.internal",
+				"VCPKG_FORCE_SYSTEM_BINARIES": "arm",
+				"PWD": "/home/ec2-user",
+				"LOGNAME": "ec2-user",
+				"XDG_SESSION_TYPE": "tty",
+				"MOTD_SHOWN": "pam",
+				"HOME": "/home/ec2-user",
+				"LANG": "en_US.UTF-8",
+				"VSCODE_AGENT_FOLDER": "/home/ec2-user/.vscode-server",
+				"SSH_CONNECTION": "180.252.163.139 49186 172.31.59.21 22",
+				"XDG_SESSION_CLASS": "user",
+				"SELINUX_ROLE_REQUESTED": "",
+				"LESSOPEN": "||/usr/bin/lesspipe.sh %s",
+				"USER": "ec2-user",
+				"SELINUX_USE_CURRENT_RANGE": "",
+				"SHLVL": "2",
+				"XDG_SESSION_ID": "18",
+				"XDG_RUNTIME_DIR": "/run/user/1000",
+				"S_COLORS": "auto",
+				"SSH_CLIENT": "180.252.163.139 49186 22",
+				"which_declare": "declare -f",
+				"PATH": "/home/ec2-user/.vscode-server/bin/da76f93349a72022ca4670c1b84860304616aaa2/bin/remote-cli:/home/ec2-user/.cargo/bin:/home/ec2-user/.local/bin:/home/ec2-user/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/ec2-user/vcpkg:/home/ec2-user/evoke/build:/home/ec2-user/zig:/home/ec2-user/vcpkg:/home/ec2-user/evoke/build:/home/ec2-user/zig",
+				"SELINUX_LEVEL_REQUESTED": "",
+				"DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/bus",
+				"MAIL": "/var/spool/mail/ec2-user",
+				"CMAKE_TOOLCHAIN_FILE": "/home/ec2-user/vcpkg/scripts/buildsystems/vcpkg.cmake",
+				"BASH_FUNC_which%%": "() {  ( alias;\n eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot \"$@\"\n}",
+				"_": "/home/ec2-user/.vscode-server/bin/da76f93349a72022ca4670c1b84860304616aaa2/node",
+				"VSCODE_HANDLES_SIGPIPE": "true",
+				"VSCODE_AMD_ENTRYPOINT": "vs/workbench/api/node/extensionHostProcess",
+				"VSCODE_HANDLES_UNCAUGHT_ERRORS": "true",
+				"VSCODE_NLS_CONFIG": "{\"locale\":\"en\",\"availableLanguages\":{}}",
+				"BROWSER": "/home/ec2-user/.vscode-server/bin/da76f93349a72022ca4670c1b84860304616aaa2/bin/helpers/browser.sh",
+				"VSCODE_CWD": "/home/ec2-user",
+				"ELECTRON_RUN_AS_NODE": "1",
+				"VSCODE_IPC_HOOK_CLI": "/run/user/1000/vscode-ipc-751dc10a-bc07-4506-ba5e-1d44e25b771a.sock",
+				"APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL": "1"
+			},
+			"problemMatcher": [
+				"$rustc"
+			],
+			"label": "rust: run tcp_packet"
+		}
+	]
+}

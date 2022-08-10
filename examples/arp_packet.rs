@@ -93,6 +93,9 @@ fn main() {
         }
     };
 
+    // let iface_name = "ens5";
+    // let target_ip = Ipv4Addr::new(52, 198, 87, 207);
+
     let interfaces = pnet::datalink::interfaces();
     let interface = interfaces
         .into_iter()
