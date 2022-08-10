@@ -102,35 +102,11 @@ fn create_tcp_packet() -> [u8; 56] {
 }
 
 fn main() {
-    // let mut args = env::args().skip(1);
-    // let iface_name = match args.next() {
-    //     Some(n) => n,
-    //     None => {
-    //         writeln!(
-    //             io::stderr(),
-    //             "USAGE: arp_packet <NETWORK INTERFACE> <TARGET IP>"
-    //         )
-    //         .unwrap();
-    //         process::exit(1);
-    //     }
-    // };
-
-    // let target_ip: Result<Ipv4Addr, AddrParseError> = match args.next() {
-    //     Some(n) => n.parse(),
-    //     None => {
-    //         writeln!(
-    //             io::stderr(),
-    //             "USAGE: arp_packet <NETWORK INTERFACE> <TARGET IP>"
-    //         )
-    //         .unwrap();
-    //         process::exit(1);
-    //     }
-    // };
-
     let iface_name = "ens5";
     let target_ip = Ipv4Addr::new(52, 198, 87, 207);
 
     let interfaces = pnet::datalink::interfaces();
+    
     let interface = interfaces
         .into_iter()
         .find(|iface| iface.name == iface_name)
